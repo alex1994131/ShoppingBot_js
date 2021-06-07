@@ -1,0 +1,122 @@
+<html>
+
+<head>
+	<title>Auto Shopping</title>
+	<link href="page.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='/src/dist/fullcalendar.min.css' rel='stylesheet' />
+	<link href='/src/dist/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+</head>
+
+<body id="bmain">
+	<div id="main">
+		<div hidden id="login">
+			<div class="signin_section">
+				<h1 class="logi">&#128274; | Login </h1>
+				<div class="form-group">
+					<label>Username:</label>
+					<input type="text" class="form-control" placeholder="username" id="signin_username">
+				</div>
+				<div class="form-group">
+					<label>Password:</label>
+					<input type="password" class="form-control" placeholder="password" id="signin_password">
+				</div>
+
+				<button id="signin" class="confirm" type="button">Sign in</button>
+				<button class="goto" id="goto_signup">Sign Up</button>
+			</div>
+
+			<div class="signup_section" style="display:none;">
+				<h1 class="logi">&#128274; | Register </h1>
+
+				<div class="form-group">
+					<label>Username:</label>
+					<input type="text" class="form-control" placeholder="username" id="signup_username">
+				</div>
+
+				<div class="form-group">
+					<label>Password:</label>
+					<input type="password" class="form-control" placeholder="password" id="signup_password">
+				</div>
+
+				<button id="signup" class="confirm" type="button">Sign Up</button>
+				<button class="goto" id="goto_signin">Sign In</button>
+			</div>
+		</div>
+		<div hidden id="cnt">
+			<div id="menu">
+				<ul class="topnav">
+					<li>
+						<a style="cursor: pointer;" id="logout"><i class="fa fa-times" aria-hidden="true"></i>Logout</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" id="x_calendar"><i class="fa fa-calendar" aria-hidden="true"></i>Calendar</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" id="help-page"><i class="fa fa-question-circle" aria-hidden="true"></i>Help</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" id="options-page"><i class="fa fa-cogs" aria-hidden="true"></i>Options</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" id="bot-list"><i class="fa fa-list" aria-hidden="true"></i> Site List</a>
+					</li>
+					<li id="notif">
+						<a style="cursor: pointer;" id="notif">
+							<center><i class="fa fa-bell" aria-hidden="true"></i></center>
+						</a>
+					</li>
+				</ul>
+				<div hidden id="boxy">
+				</div>
+				<center>
+					<div id="proxy_status">
+						<p>Current proxy status: <a id="proxy_result"></a></p>
+						<select data-val='' class="select" id="proxy_list"></select> <a id="proxy_start">start</a> <a
+							id="proxy_stop">stop</a>
+					</div>
+				</center>
+			</div>
+			<div id="framess">
+				<div hidden id="fr1_cont">
+					<iframe frameborder="0" id="fr1" src="opt.html"></iframe>
+				</div>
+				<div id="fr2_cont">
+					<iframe frameborder="0" scrolling="auto" id="fr2" src="main.html"></iframe>
+				</div>
+			</div>
+			<div hidden id="help_frame">
+				<center style="padding-top: 10px;">
+					<a target="_blank" class="info_text" href="#">
+						<h3>Terms</h3>
+					</a>
+					<a target="_blank" class="info_text" href="#">
+						<h3>Privacy Policy</h3>
+					</a>
+					<a target="_blank" class="info_text" href="#">
+						<h3>F.A.Q</h3>
+					</a>
+					<a target="_blank" class="info_text" href="#">
+						<h3>Twitter</h3>
+					</a>
+				</center>
+			</div>
+			<br>
+			<div hidden id="calendar_frame">
+				<div id='calendar'></div>
+			</div>
+		</div>
+	</div>
+	<center><br><a id="footer" href="http://www.heatedsneaks.com" target="_blank">
+			<p>Auto Shopping</p>
+		</a></center>
+</body>
+<script src="/src/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/src/dist/sweetalert.css">
+<script src="/src/dist/jquery.js"></script>
+<script src='/src/dist/moment.min.js'></script>
+<script src='/src/dist/fullcalendar.min.js'></script>
+<script src="utils.js"></script>
+<script src="page.js"></script>
+
+</html>

@@ -1,0 +1,131 @@
+{
+   "background": {
+      "permissions": [
+         "<all_urls>"
+      ],
+      "scripts": [
+         "src/dist/jquery.js",
+         "src/main/utils.js",
+         "background.js"
+      ]
+   },
+   "browser_action": {
+      "default_icon": "src/main/img/logo.png"
+   },
+   "content_scripts": [
+      {
+         "js": [
+            "src/dist/jquery.js",
+            "src/main/utils.js"
+         ],
+         "matches": [
+            "<all_urls>"
+         ],
+         "all_frames": true,
+         "run_at": "document_end"
+      },
+      {
+         "js": [
+            "src/dist/google_recaptcha.js"
+         ],
+         "matches": [
+            "https://*.google.com/recaptcha/*"
+         ],
+         "all_frames": true,
+         "run_at": "document_end"
+      },
+      {
+         "js": [
+            "src/dist/jquery.js",
+            "content_script.js",
+            "src/dist/worldpay.js"
+         ],
+         "matches": [
+            "https://payments.worldpay.com/*"
+         ],
+         "all_frames": true,
+         "run_at": "document_end"
+      },
+      {
+         "js": [
+            "src/dist/jquery.js",
+            "content_script.js",
+            "src/dist/adyen.js"
+         ],
+         "matches": [
+            "https://live.adyen.com/*"
+         ],
+         "all_frames": true,
+         "run_at": "document_end"
+      },
+      {
+         "js": [
+            "src/dist/jquery.js",
+            "content_script.js",
+            "shops/footlocker.js",
+            "src/dist/key.js",
+            "src/dist/bill.js"
+         ],
+         "matches": [
+            "*://*.footlocker.hk/*"
+         ],
+         "all_frames": true,
+         "run_at": "document_end"
+      },
+      {
+         "js": [
+            "src/dist/jquery.js",
+            "content_script.js",
+            "shops/nike.js",
+            "src/dist/ExpandSelect.js",
+            "src/dist/key.js",
+            "src/dist/bill.js"
+         ],
+         "matches": [
+            "*://*.nike.com.hk/*"
+         ],
+         "all_frames": true,
+         "run_at": "document_end"
+      },
+      {
+         "js": [
+            "src/dist/jquery.js",
+            "content_script.js",
+            "shops/adidas.js",
+            "src/dist/key.js",
+            "src/dist/bill.js"
+         ],
+         "matches": [
+            "*://*.adidas.com.hk/*"
+            ],
+         "all_frames": true,
+         "run_at": "document_end"
+      }
+   ],
+   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+   "description": "Auto Shopping extension for more quick purchace aganist to Adidas, Footlocker, Nike's shoes goods",
+   "icons": {
+      "128": "src/main/img/logo.png",
+      "16": "src/main/img/logo.png",
+      "48": "src/main/img/logo.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvRITlVwhd/4/RtLUdEZKdT6G1DyFdnML52E42xhn8Bw+rh4Nm4cs6s9Tpf1Lnj/QJ9PXgjgKmXAykTSrw8SKJJ5IX3rdwUZga3NTvft4SQDCXYc6V5K4LW0JqU5zA/d2JcUd1yzu3UBHvZ4AZLIRIdqx24W1B6ziKKXqFOoZ9wkblAt2Se4aE68/14Y13jT3i3oEyv5L8nfgPiSJxYDl5y8QLYMO0C7ytPLa5j8kfRrS4Fl3l6NGzG2mRLeT1O2QsfApegngMYIHBi3/baPsItt1b2LzqgKc/FYJmpBvqYj4KMk7OcjtXmn9x+/p1E5dBqCTxg3vN4gX29+MpNoVmQIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "18.0.0",
+   "name": "Shopes Shoping",
+   "options_page": "src/main/page.html",
+   "permissions": [
+      "webRequest",
+      "webRequestBlocking",
+      "tabs",
+      "storage",
+      "<all_urls>",
+      "notifications",
+      "background",
+      "proxy",
+      "cookies",
+      "system.cpu"
+   ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.0"
+}

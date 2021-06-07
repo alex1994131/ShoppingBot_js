@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/style.css">
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div id="profile_info" class="form-group">
+			<p>Profile Info</p>
+			<input type="text" id="profile_name" class="form-control" placeholder="Profile Name">
+		</div>
+		<div id="contact_info">
+			<p>Contact Info</p>
+			<input type="text" id="contact_first_name" class="form-control" placeholder="First Name"> 
+			<input type="text" id="contact_last_name" class="form-control" placeholder="Last Name">
+			<input type="email" id="contact_email" class="form-control" placeholder="Email"> 
+			<input type="text" id="contact_phone" class="form-control" placeholder="Phone">
+		</div>
+		<div id="billing_info">
+			<p>Billing Info</p>
+			<input type="text" id="billing_address1" class="form-control" placeholder="Address 1">
+			<input type="text" id="billing_address2" class="form-control" placeholder="Address 2">
+			<input type="text" id="billing_zip_code" class="form-control" placeholder="Zip Code">
+			<input type="text" id="billing_address_country" class="form-control" placeholder="Country">
+			<input type='text' id='billing_address_province' class="form-control" placeholder='Province'/>
+			<input type='text' id='billing_address_city' class="form-control" placeholder='City'>
+			<input type='text' id='billing_address_area' class="form-control" placeholder='Area'>
+		</div>
+		<button class="save" id="save">SAVE PROFILE</button>
+	</body>
+	<script src="/src/dist/jquery.js"></script>
+	<script src="./utils.js"></script>
+	<script src="./form.js"></script>
+</html>
