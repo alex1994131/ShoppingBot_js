@@ -27,8 +27,25 @@ chrome.extension.sendMessage(
 
     if(_isCheckoutPage())
     {
+        console.log(contact_info);
+        console.log(billing_info);
+        $("#title-"+ contact_info["contact_gender"] +"-checkout-billing-address-form").prop('checked', true);
+        $("#billing_FirstNamecheckout-billing-address-form").val(contact_info["contact_first_name"]);
+        $("#billing_LastName").val(contact_info["contact_last_name"]);
+        $("#billing_CountryCodecheckout-billing-address-form").val(billing_info["billing_address_country"]);
+        $("#billing_Address1checkout-billing-address-form").val(billing_info["billing_address1"])
+        $("#billing_Address3checkout-billing-address-form").val(billing_info["billing_address2"])
+        $("#billing_Citycheckout-billing-address-form").val(billing_info["billing_address_city"])
+        $("#billing_Statecheckout-billing-address-form").val(billing_info["billing_address_province"])
+        $("#billing_PhoneHomecheckout-billing-address-form").val(contact_info["contact_phone"])
+        $("#fl-shipping-address-same-as-billing").prop('checked', true);
+
         if(!$('#terms-conditions-agree').is(':checked')) {
           $('#terms-conditions-agree').prop('checked', true)
+        }
+
+        if(!$("#email_Newsletter").is(':checked')) {
+          $('#email_Newsletter').prop('checked', true) 
         }
         await __simulateClick('[data-testid="fl-button-submit-sendorder-checkout-address-panel"]', 2);
     }
@@ -44,25 +61,27 @@ chrome.extension.sendMessage(
         redirect('/en/cart');  
     }
     else {
-      var timer = new Date(parseInt(launch_time.start_year), parseInt(launch_time.start_month)-1, parseInt(launch_time.start_day), parseInt(launch_time.start_hour), parseInt(launch_time.start_minute), parseInt(launch_time.start_second), 0).getTime();
-      var old_recent = Date.now();
+      // var timer = new Date(parseInt(launch_time.start_year), parseInt(launch_time.start_month)-1, parseInt(launch_time.start_day), parseInt(launch_time.start_hour), parseInt(launch_time.start_minute), parseInt(launch_time.start_second), 0).getTime();
+      // var old_recent = Date.now();
 
-      console.log(timer);
-      console.log(old_recent);
+      // console.log(timer);
+      // console.log(old_recent);
       
-      if(timer >= old_recent) {
-          var delay = setInterval(async function(){
-              var recent = Date.now();
+      // if(timer >= old_recent) {
+      //     var delay = setInterval(async function(){
+      //         var recent = Date.now();
 
-              if(recent >= timer) {
-                  await __simulateClick('[data-testid="fl-cart-button-checkout-1"]', 2);
-                  clearInterval(delay);
-              }
-          }, 300);
-      }
-      else {
-          alert('Launch Timer Expired')
-      }
+      //         if(recent >= timer) {
+      //             await __simulateClick('[data-testid="fl-cart-button-checkout-1"]', 2);
+      //             clearInterval(delay);
+      //         }
+      //     }, 300);
+      // }
+      // else {
+      //     alert('Launch Timer Expired')
+      // }
+      await __simulateClick('[data-testid="fl-cart-button-checkout-1"]', 2);
+      clearInterval(delay);
     }
   }
 );

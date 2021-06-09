@@ -8,6 +8,7 @@ var load_Profile = (profile) => {
     if(contact_info) {
         $("#contact_first_name").val(contact_info.contact_first_name);
         $("#contact_last_name").val(contact_info.contact_last_name);
+        $('#contact_gender').val(contact_info.contact_gender);
         $("#contact_email").val(contact_info.contact_email);
         $("#contact_phone").val(contact_info.contact_phone);
     }
@@ -50,6 +51,7 @@ $("#save").click(function() {
 
         var contact_info = {
             'contact_first_name': $("#contact_first_name").val(),
+            'contact_gender': $("#contact_gender").val(),
             'contact_last_name': $("#contact_last_name").val(),
             'contact_email': $("#contact_email").val(),
             'contact_phone': $("#contact_phone").val(),
